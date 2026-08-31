@@ -74,6 +74,24 @@ var io = new IntersectionObserver(function (entries) {
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
+/* expandable service panels */
+document.querySelectorAll('.svc-panel').forEach(function (p) {
+  var toggle = function () {
+    var open = p.classList.toggle('is-open');
+    p.setAttribute('aria-expanded', open);
+  };
+  p.addEventListener('click', function (e) {
+    if (e.target.closest('a')) return;
+    toggle();
+  });
+  p.addEventListener('keydown', function (e) {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target === p) {
+      e.preventDefault();
+      toggle();
+    }
+  });
+});
+
 /* gallery lightbox */
 var lightbox = document.getElementById('lightbox');
 var boxImg = document.getElementById('lightbox-img');
