@@ -22,19 +22,11 @@ menu.querySelectorAll('a').forEach(function (a) {
   });
 });
 
-/* rotating hero images */
-var slidesBox = document.getElementById('hero-slides');
-if (slidesBox) {
-  var slides = slidesBox.querySelectorAll('img');
-  var sIdx = 0;
-  var reducedSlides = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!reducedSlides && slides.length > 1) {
-    setInterval(function () {
-      slides[sIdx].classList.remove('is-active');
-      sIdx = (sIdx + 1) % slides.length;
-      slides[sIdx].classList.add('is-active');
-    }, 6000);
-  }
+/* hero video: respect reduced motion */
+var heroVideo = document.getElementById('hero-video');
+if (heroVideo && matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  heroVideo.removeAttribute('autoplay');
+  heroVideo.pause();
 }
 
 /* rotating hero reviews */
