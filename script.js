@@ -95,7 +95,7 @@ document.querySelectorAll('.svc-panel').forEach(function (p) {
 /* gallery lightbox */
 var lightbox = document.getElementById('lightbox');
 var boxImg = document.getElementById('lightbox-img');
-document.querySelectorAll('.gallery figure').forEach(function (fig) {
+document.querySelectorAll('.fleet-scroller figure').forEach(function (fig) {
   fig.addEventListener('click', function () {
     var img = fig.querySelector('img');
     boxImg.src = img.src;
