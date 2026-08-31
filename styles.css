@@ -51,31 +51,54 @@ h3{font-size:1.22rem}
 .btn--ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
 .btn:active{transform:translateY(0) scale(.98)}
 
-/* nav */
+/* nav — solid two-tier bar */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:60;
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  padding:.6rem clamp(20px,4vw,44px);
-  transition:background .35s,border-color .35s;
-  border-bottom:1px solid transparent;
+  background:var(--ink-2);
+  transition:box-shadow .35s;
 }
-.nav.is-scrolled{background:rgba(26,36,24,.88);backdrop-filter:blur(14px);border-color:var(--line)}
-.nav-logo img{height:58px;width:auto;background:#fff;border-radius:12px;padding:7px 12px}
-.nav-links{display:flex;gap:clamp(1rem,2.4vw,2rem);align-items:center}
-.nav-links a{font-size:.94rem;font-weight:500;color:var(--muted);transition:color .2s}
-.nav-links a:hover{color:var(--text)}
+.nav.is-scrolled{box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.nav-top{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.55rem clamp(20px,4vw,44px);
+  border-bottom:1px solid var(--line);
+}
+.nav-brand{display:flex;align-items:center;gap:clamp(.8rem,2vw,1.3rem)}
+.nav-logo img{height:52px;width:auto;background:#fff;border-radius:10px;padding:6px 10px}
+.nav-divider{width:1px;height:34px;background:var(--line-strong)}
+.nav-region{
+  font-size:.82rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);white-space:nowrap;
+}
+.nav-utils{display:flex;align-items:center;gap:.6rem}
+.nav-util{
+  width:40px;height:40px;border-radius:10px;display:grid;place-items:center;
+  transition:background .25s;
+}
+.nav-util:hover{background:rgba(255,255,255,.08)}
+.nav-util svg{width:17px;height:17px;fill:rgba(250,249,246,.8)}
 .nav-call{
   display:inline-flex;align-items:center;gap:.5rem;background:var(--green);color:var(--on-green);
-  font-weight:700;font-size:.92rem;height:42px;padding:0 1.2rem;line-height:1;border-radius:999px;transition:background .25s,transform .25s;
+  font-weight:700;font-size:.92rem;height:40px;padding:0 1.2rem;line-height:1;border-radius:999px;
+  margin-left:.4rem;transition:background .25s,transform .25s;
 }
 .nav-call:hover{background:var(--green-2);transform:translateY(-1px)}
 .nav-call svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+.nav-menu{padding:0 clamp(20px,4vw,44px)}
+.nav-menu-inner{display:flex;gap:clamp(1.1rem,2.6vw,2.2rem);overflow-x:auto;scrollbar-width:none}
+.nav-menu-inner::-webkit-scrollbar{display:none}
+.nav-menu-inner a{
+  font-size:.92rem;font-weight:600;color:var(--text);white-space:nowrap;
+  padding:.85rem 0;border-bottom:3px solid transparent;
+  transition:color .2s,border-color .2s;
+}
+.nav-menu-inner a:hover{color:var(--green-2);border-color:var(--green)}
 .nav-toggle{display:none;background:none;border:0;cursor:pointer;color:var(--text);width:44px;height:44px;align-items:center;justify-content:center}
 .nav-toggle svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
 .mobile-menu{display:none}
 
-/* hero */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;isolation:isolate}
+/* hero sits below the solid nav */
+.hero{position:relative;margin-top:116px;min-height:calc(100svh - 116px);display:flex;align-items:flex-end;isolation:isolate}
 .hero-bg{position:absolute;inset:0;z-index:-2;background:var(--ink-2)}
 .hero-bg video{
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;
@@ -281,13 +304,15 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2.2rem;margin-top:clamp(3
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:720px){
-  .nav-links{display:none}
+  .nav-menu{display:none}
   .nav-toggle{display:flex}
+  .nav-util,.nav-divider,.nav-region{display:none}
   .nav-call span{display:none}
   .nav-call{padding:0 .9rem}
-  .nav-logo img{height:46px;padding:5px 9px}
+  .nav-logo img{height:44px;padding:5px 9px}
+  .hero{margin-top:64px;min-height:calc(100svh - 64px)}
   .mobile-menu{
-    display:block;position:fixed;top:66px;left:12px;right:12px;z-index:59;
+    display:block;position:fixed;top:70px;left:12px;right:12px;z-index:59;
     background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius-lg);
     padding:8px;box-shadow:var(--shadow);
     transform:translateY(-14px);opacity:0;pointer-events:none;
