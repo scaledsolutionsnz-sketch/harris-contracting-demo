@@ -22,6 +22,21 @@ menu.querySelectorAll('a').forEach(function (a) {
   });
 });
 
+/* rotating hero images */
+var slidesBox = document.getElementById('hero-slides');
+if (slidesBox) {
+  var slides = slidesBox.querySelectorAll('img');
+  var sIdx = 0;
+  var reducedSlides = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reducedSlides && slides.length > 1) {
+    setInterval(function () {
+      slides[sIdx].classList.remove('is-active');
+      sIdx = (sIdx + 1) % slides.length;
+      slides[sIdx].classList.add('is-active');
+    }, 6000);
+  }
+}
+
 /* rotating hero reviews */
 var HERO_REVIEWS = [
   { text: 'Tight bales, wrapped properly, and they left the gateways tidier than they found them.', name: 'Mark T., Hinds' },
