@@ -92,6 +92,39 @@ document.querySelectorAll('.svc-panel').forEach(function (p) {
   });
 });
 
+/* auto-drifting photo strips */
+document.querySelectorAll('.fleet-scroller').forEach(function (sc) {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var slides = Array.prototype.slice.call(sc.children);
+  slides.forEach(function (sl) {
+    var c = sl.cloneNode(true);
+    c.setAttribute('aria-hidden', 'true');
+    sc.appendChild(c);
+  });
+  var GAP = 12;
+  var paused = false;
+  var resumeTimer;
+  var pause = function () {
+    paused = true;
+    clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(function () { paused = false; }, 2500);
+  };
+  ['pointerdown', 'wheel', 'touchstart', 'focusin'].forEach(function (ev) {
+    sc.addEventListener(ev, pause, { passive: true });
+  });
+  sc.addEventListener('mouseenter', function () { paused = true; clearTimeout(resumeTimer); });
+  sc.addEventListener('mouseleave', function () { paused = false; });
+  var step = function () {
+    if (!paused) {
+      var half = (sc.scrollWidth + GAP) / 2;
+      sc.scrollLeft += 0.6;
+      if (sc.scrollLeft >= half) sc.scrollLeft -= half;
+    }
+    requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+});
+
 /* gallery lightbox */
 var lightbox = document.getElementById('lightbox');
 var boxImg = document.getElementById('lightbox-img');
