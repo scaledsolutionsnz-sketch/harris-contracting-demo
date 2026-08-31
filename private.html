@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Private Feedback | Harris Contracting</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#131711">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#131711;--green:#76b82a;--green-2:#8fd23c;--on-green:#101403;--line:rgba(255,255,255,.12)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--ink);color:#f2f4ee;min-height:100svh;display:flex;flex-direction:column;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.page-bg{position:fixed;inset:0;z-index:0;background:url('img/green-aerial.webp') center/cover;opacity:.12}
+nav{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:1.2rem clamp(20px,5vw,3rem);border-bottom:1px solid var(--line)}
+nav img{height:40px;width:auto;background:#fff;border-radius:9px;padding:5px 9px}
+.back{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,244,238,.55);transition:color .2s}
+.back:hover{color:var(--green-2)}
+.back svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+main{position:relative;z-index:5;flex:1;display:flex;align-items:center;justify-content:center;padding:clamp(2rem,6vw,4rem) 1.25rem}
+.card{background:rgba(25,30,22,.85);border:1px solid var(--line);border-radius:20px;padding:clamp(2rem,5vw,3rem) clamp(1.4rem,4vw,2.6rem);max-width:560px;width:100%;backdrop-filter:blur(14px);box-shadow:0 34px 84px rgba(0,0,0,.55)}
+h1{font-family:'Outfit';font-weight:800;font-size:clamp(1.7rem,5vw,2.3rem);line-height:1.08;letter-spacing:-.02em}
+.sub{color:rgba(242,244,238,.7);font-size:.98rem;margin-top:.8rem}
+form{margin-top:1.8rem;display:grid;gap:1.1rem;text-align:left}
+label{font-size:.88rem;font-weight:600;display:block;margin-bottom:.4rem}
+input,select,textarea{
+  width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+  border-radius:12px;padding:.85rem 1rem;color:#f2f4ee;font:inherit;font-size:.95rem;
+  transition:border-color .2s,background .2s;
+}
+input::placeholder,textarea::placeholder{color:rgba(242,244,238,.4)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--green);background:rgba(255,255,255,.09)}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23f2f4ee' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+select option{background:#191e16;color:#f2f4ee}
+textarea{min-height:130px;resize:vertical}
+button{
+  margin-top:.4rem;min-height:56px;border:0;border-radius:999px;background:var(--green);color:var(--on-green);
+  font:inherit;font-weight:700;font-size:1rem;cursor:pointer;transition:background .25s,transform .2s;
+}
+button:hover{background:var(--green-2);transform:translateY(-2px)}
+.thanks{display:none;text-align:center;padding:2rem 0 1rem}
+.thanks svg{width:54px;height:54px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:1rem}
+.thanks h2{font-family:'Outfit';font-size:1.5rem}
+.thanks p{color:rgba(242,244,238,.7);margin-top:.6rem}
+footer{position:relative;z-index:5;text-align:center;padding:1.6rem 1rem 2rem;font-size:.8rem;color:rgba(242,244,238,.34)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page-bg" aria-hidden="true"></div>
+
+<nav>
+  <a href="index.html" aria-label="Harris Contracting home"><img src="img/logo.png" alt="Harris Contracting"></a>
+  <a class="back" href="index.html">
+    <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Back to site
+  </a>
+</nav>
+
+<main>
+  <div class="card">
+    <div id="form-wrap">
+      <h1>Tell us straight</h1>
+      <p class="sub">This comes directly to Andrew, not to a public page. If something was not right on your job, we want to fix it.</p>
+      <form id="fb-form" action="https://api.staticforms.xyz/submit" method="post">
+        <input type="hidden" name="apiKey" value="sf_768da8d33927e7f4f241d0a6">
+        <input type="hidden" name="subject" value="Private feedback - Harris Contracting">
+        <input type="hidden" name="redirectTo" value="">
+        <div>
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" required placeholder="Name">
+        </div>
+        <div>
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" required placeholder="you@example.co.nz">
+        </div>
+        <div>
+          <label for="f-rating">How was the job?</label>
+          <select id="f-rating" name="$rating" required>
+            <option value="" disabled selected>Pick one</option>
+            <option value="1">1 - Not good</option>
+            <option value="2">2 - Below par</option>
+            <option value="3">3 - Okay, could be better</option>
+            <option value="4">4 - Good</option>
+            <option value="5">5 - Great</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-msg">What happened?</label>
+          <textarea id="f-msg" name="message" required placeholder="The paddock, the job, and what we could have done better."></textarea>
+        </div>
+        <button type="submit">Send to Andrew</button>
+      </form>
+    </div>
+    <div class="thanks" id="thanks">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="8 12.5 11 15.5 16 9.5"/></svg>
+      <h2>Got it, thanks</h2>
+      <p>Andrew reads every one of these. If you left your number or email, expect to hear back within a day or two.</p>
+    </div>
+  </div>
+</main>
+
+<footer>&copy; <span id="yr">2026</span> Harris Contracting &middot; Tinwald, Ashburton</footer>
+
+<script>
+var params=new URLSearchParams(location.search);
+var r=params.get('rating');
+if(r){var sel=document.getElementById('f-rating');if(sel.querySelector('option[value="'+r+'"]'))sel.value=r;}
+
+document.getElementById('fb-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  var form=this;
+  var data=new FormData(form);
+  fetch(form.action,{method:'POST',body:data}).finally(function(){
+    document.getElementById('form-wrap').style.display='none';
+    document.getElementById('thanks').style.display='block';
+  });
+});
+
+document.getElementById('yr').textContent=(new Date()).getFullYear();
+</script>
+</body>
+</html>
