@@ -350,6 +350,8 @@ h3{font-size:1.22rem}
 .contact-buttons{display:flex;flex-direction:column;gap:.9rem;justify-content:center}
 .contact-buttons .btn{width:100%}
 .contact-fine{color:var(--faint);font-size:.84rem;text-align:center;margin-top:.4rem}
+.contact-map{grid-column:1/-1}
+.contact-map iframe{width:100%;height:clamp(280px,38vh,380px);border:0;border-radius:var(--radius);display:block;filter:saturate(.9) contrast(1.02)}
 
 /* footer */
 footer{border-top:1px solid var(--line);padding:2.6rem 0 2rem;margin-top:clamp(2rem,4vw,3rem)}
