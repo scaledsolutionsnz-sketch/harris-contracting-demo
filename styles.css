@@ -433,3 +433,7 @@ footer{border-top:1px solid var(--line);padding:2.6rem 0 2rem;margin-top:clamp(2
   .team-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
 }
+
+/* Brief updates */
+.svc-panel:nth-child(4) .svc-panel-body>p{font-weight:700;color:var(--text)}
+#faq .faq-list{display:none}

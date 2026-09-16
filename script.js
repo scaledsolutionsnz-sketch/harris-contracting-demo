@@ -92,6 +92,12 @@ document.querySelectorAll('.svc-panel').forEach(function (p) {
   });
 });
 
+/* Keep the service contact list aligned with the current team. */
+document.querySelectorAll('.svc-contacts a[href="tel:+64274324031"]').forEach(function (a) {
+  a.href = 'tel:+64273188798';
+  a.textContent = 'Andrew Harris 027 318 8798';
+});
+
 /* auto-drifting photo strips */
 document.querySelectorAll('.fleet-scroller').forEach(function (sc) {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
