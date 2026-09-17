@@ -80,14 +80,14 @@ footer{position:relative;z-index:5;text-align:center;padding:1.6rem 1rem 2rem;fo
 <footer>&copy; <span id="yr">2026</span> Harris Contracting &middot; Tinwald, Ashburton</footer>
 
 <script>
-var GOOGLE_REVIEW_URL='https://www.google.com/maps/search/?api=1&query=Harris%20Contracting%2C%20Tinwald%2C%20Ashburton';
+var GOOGLE_REVIEW_URL='index.html#reviews';
 
 var labels={
   1:'Sorry to hear that. Tell us what went wrong.',
   2:'Not good enough. We would like to hear more.',
   3:'Thanks. Tell us what we could have done better.',
-  4:'Good to hear. Mind putting that on Google?',
-  5:'Great. A quick Google review really helps us.'
+  4:'Thanks. The Google profile is coming soon.',
+  5:'Thanks. The Google profile is coming soon.'
 };
 var stars=document.querySelectorAll('.star');
 var label=document.getElementById('label');
@@ -110,14 +110,13 @@ stars.forEach(function(s){
     stars.forEach(function(x){x.classList.toggle('sel',+x.dataset.v<=picked)});
     label.textContent=labels[picked];label.classList.add('on');
     go.classList.add('ready');go.disabled=false;
-    go.textContent=picked>=4?'Leave a Google review':'Tell us what happened';
+    go.textContent='Google profile coming soon';
   });
 });
 
 go.addEventListener('click',function(){
   if(!picked)return;
-  if(picked>=4){window.open(GOOGLE_REVIEW_URL,'_blank','noopener');}
-  else{window.location.href='private.html?rating='+picked;}
+  window.location.href=GOOGLE_REVIEW_URL;
 });
 
 document.getElementById('yr').textContent=(new Date()).getFullYear();
