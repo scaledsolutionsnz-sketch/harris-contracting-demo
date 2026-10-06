@@ -18,7 +18,7 @@
   --shadow-sm:0 10px 28px rgba(0,0,0,.35);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:121px}
 body{
   font-family:'Hanken Grotesk',system-ui,sans-serif;
   background:var(--ink);color:var(--text);
@@ -192,6 +192,10 @@ h3{font-size:1.22rem}
 }
 .faq-list details[open] summary::after{transform:rotate(225deg);margin-top:4px}
 .faq-list details p{padding:0 1.3rem 1.15rem;color:var(--muted);font-size:.96rem}
+.faq-list summary:focus-visible{outline-offset:-3px;border-radius:var(--radius)}
+#faq .lede a,.faq-list details p a{color:var(--green-2);font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+#faq .lede a:hover,.faq-list details p a:hover{color:var(--text)}
+#faq a[href^="tel:"]{white-space:nowrap}
 
 /* services — full-bleed image panels */
 .section--svc{padding-bottom:0}
@@ -427,6 +431,7 @@ footer{border-top:1px solid var(--line);padding:2.6rem 0 2rem;margin-top:clamp(2
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:720px){
+  html{scroll-padding-top:62px}
   .nav-menu{display:none}
   .nav-toggle{display:flex}
   .nav-util,.nav-divider,.nav-region{display:none}
