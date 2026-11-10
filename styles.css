@@ -462,7 +462,7 @@ footer{border-top:1px solid var(--line);padding:2.6rem 0 2rem;margin-top:clamp(2
 }
 
 /* Brief updates */
-.svc-panel:nth-child(4) .svc-panel-body>p{font-weight:700;color:var(--text)}
+.svc-panel:nth-child(3) .svc-panel-body>p{font-weight:700;color:var(--text)}
 #hero-review{display:none}
 @media (max-width:1000px){.svc-subheading{grid-column:span 1}}
 
