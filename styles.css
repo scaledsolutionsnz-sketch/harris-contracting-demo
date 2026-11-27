@@ -483,7 +483,3 @@ footer{border-top:1px solid var(--line);padding:2.6rem 0 2rem;margin-top:clamp(2
   .cert-grid{grid-template-columns:1fr}
   .cert-card:nth-child(2){max-width:420px}
 }
-
-/* service panels with no photo (waiting on real ones) */
-.svc-panel--plain{background:linear-gradient(160deg,#2a3a26 0%,#1a2418 100%);min-height:clamp(320px,44vh,460px)}
-.svc-subheading--transport~.svc-panel--plain{min-height:clamp(320px,44vh,460px)}
